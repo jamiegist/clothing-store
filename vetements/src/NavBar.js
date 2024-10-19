@@ -5,7 +5,10 @@ export default function NavBar() {
         <nav className='navbar'>
             <a href='/' className='site-title'>Vêtements</a>
             <ul>
-                <li className="active">
+                <li className='active'>
+                    <a href='/'>Home</a>
+                </li>
+                <li>
                     <a href='/shop'>Shop</a>
                 </li>
             </ul>

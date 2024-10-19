@@ -36,4 +36,6 @@ nav li.active {
 
 nav li:hover {
     background-color: lightgrey;
+    color: black;
+    border-radius: 1rem;
 }
