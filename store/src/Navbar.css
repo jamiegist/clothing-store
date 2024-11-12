@@ -1,0 +1,22 @@
+nav {
+    width: 100%;
+    background-color: black;
+}
+
+ul {
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+}
+
+li {
+    list-style-type: none;
+    text-decoration: none;
+    display: inline;
+    padding: 2em;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: white;
+}
