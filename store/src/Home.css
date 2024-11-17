@@ -1,3 +1,14 @@
 .homepage {
     text-align: center;
 }
+
+button > .shop-button {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    border-radius: .75em;
+    font-size: 20px;
+    padding: .5em;
+}
