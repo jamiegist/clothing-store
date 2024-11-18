@@ -1,14 +1,45 @@
 .homepage {
     text-align: center;
-}
+    position: relative;
+    width: 50%;
+  }
+  
+  .hero-img {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .homepage:hover .hero-img {
+    opacity: 0.3;
+  }
+  
+  .homepage:hover .middle {
+    opacity: 1;
+  }
+  
+  .text {
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+  }
 
-button > .shop-button {
+  .shop-link {
+    color: white;
     text-decoration: none;
-    color: black;
-}
-
-button {
-    border-radius: .75em;
-    font-size: 20px;
-    padding: .5em;
-}
+  }
