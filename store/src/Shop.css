@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.shop-container {
+    text-align: center;
+}
+
+.add-to-cart-btn {
+    font-size: 12px;
+    border-radius: .25em;
+    color: white;
+    background-color: black;
+    margin-bottom: 1em;
+}
