@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.shop-container {
-    text-align: center;
+.product-container {
+    display: block;
+   text-align: center;
+    width: 100%;
+}
+
+.products {
+    display: block;
 }
 
 .add-to-cart-btn {

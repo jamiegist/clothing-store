@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaCartPlus, FaTrashAlt } from 'react-icons/fa';
 import WhiteShirt from './images/shirt.webp';
+import PlaidBlazer from './images/plaid-blazer.jpeg';
 import PinkShirt from './images/pink-shirt.webp';
 import BlackSuit from './images/black-suit.webp';
 import GreenSneakers from './images/green-sneakers.webp';
@@ -8,10 +9,12 @@ import GreenSneakers from './images/green-sneakers.webp';
 export default function Shop() {
  // Product data
  const products = [
-    {id: 1, name: 'White Shirt', price: 25, image: WhiteShirt},
-    {id: 2, name: 'Pink Shirt', price: 25, image: PinkShirt},
-    {id: 3, name: 'Black Suit', price: 100, image: BlackSuit},
-    {id: 4, name: 'Green Sneakers', price: 75, image: GreenSneakers},
+    {id: 1, name: 'White Shirt', price: 45, image: WhiteShirt},
+    {id: 2, name: 'Pink Shirt', price: 45, image: PinkShirt},
+    {id: 3, name: 'Plaid Blazer', price: 90, image: PlaidBlazer},
+    {id: 4, name: 'Black Suit', price: 100, image: BlackSuit},
+    {id: 5, name: 'Green Sneakers', price: 75, image: GreenSneakers},
+   
   ];
 
   // State to manage cart items
@@ -81,21 +84,19 @@ export default function Shop() {
                     ) : (
                         <>
                             {cartItems.map((item) => (
-                                <div key={item.id} className="flex justify-between
-                                items-center my-4 border-b pb-4">
+                                <div key={item.id} className="item-container">
                                     <img src={item.image} alt={item.name}
-                                    className="h-20 w-20 object-cover rounded-lg" />
-                                    <div className="flex flex-col">
-                                        <h3 className="text-lg font-semibold">
+                                    className="cart-img" />
+                                    <div className="cart-content">
+                                        <h3 className="cart-item-name">
                                         {item.name}</h3>
-                                        <p className="text-white font-semibold">
+                                        <p className="cart-item-price">
                                         ${item.price}</p>
-                                        <div className="flex items-center gap-2 mt-2">
+                                        <div className="cart-quantity">
                                             <button
                                                 onClick={() => updateQuantity
                                                 (item.id, item.quantity - 1)}
-                                                className="bg-white px-2 py-1
-                                                rounded text-green-600"
+                                                className="decrement-item"
                                             >
                                                 -
                                             </button>
@@ -103,22 +104,21 @@ export default function Shop() {
                                             <button
                                                 onClick={() => updateQuantity
                                                 (item.id, item.quantity + 1)}
-                                                className="bg-white px-2 py-1
-                                                rounded text-green-600"
+                                                className="increment-item"
                                             >
                                                 +
                                             </button>
                                         </div>
                                     </div>
                                     <button onClick={() => removeFromCart(item.id)}
-                                    className="text-white">
+                                    className="remove-btn">
                                         <FaTrashAlt size={20} />
                                     </button>
                                 </div>
                             ))}
-                            <div className="flex justify-between items-center mt-6">
-                                <h3 className="text-xl font-bold text-white">Total:</h3>
-                                <span className="text-xl font-bold text-white">$
+                            <div className="cart-total">
+                                <h3 className="total">Total:</h3>
+                                <span className="dollar-amt">$
                                 {total.toFixed(2)}</span>
                             </div>
                         </>
