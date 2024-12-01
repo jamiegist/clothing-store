@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import { FaCartPlus, FaTrashAlt } from 'react-icons/fa';
+import WhiteShirt from './images/shirt.webp';
+import PinkShirt from './images/pink-shirt.webp';
+import BlackSuit from './images/black-suit.webp';
+import GreenSneakers from './images/green-sneakers.webp';
 
 export default function Shop() {
  // Product data
  const products = [
-    {id: 1, name: 'White Shirt', price: 25, image: './images/shirt.webp'},
-    {id: 2, name: 'Pink Shirt', price: 25, image: './images/pink-shirt.webp'},
-    {id: 3, name: 'Black Suit', price: 100, image: './images/black-suit.webp'},
-    {id: 4, name: 'Green Sneakers', price: 75, image: './images/green-sneakers.webp'},
+    {id: 1, name: 'White Shirt', price: 25, image: WhiteShirt},
+    {id: 2, name: 'Pink Shirt', price: 25, image: PinkShirt},
+    {id: 3, name: 'Black Suit', price: 100, image: BlackSuit},
+    {id: 4, name: 'Green Sneakers', price: 75, image: GreenSneakers},
   ];
 
   // State to manage cart items
@@ -45,28 +49,23 @@ export default function Shop() {
     item.quantity, 0);
 
     return (
-<div className="min-h-screen bg-white text-white p-4">
-            <div className="container mx-auto">
-                <h1 className="text-3xl font-bold mb-4 text-green-600
-                text-center">Shop</h1>
+<div className="shop-container">
+            <div className="product-container">
+                <h1 className="shop-header">Shop</h1>
 
                 {/* Product List */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
-                gap-6 mb-8">
+                <div className="products">
                     {products.map((product) => (
-                        <div key={product.id} className="border p-4 rounded-lg
-                        shadow-lg hover:shadow-2xl transition-shadow duration-200">
+                        <div key={product.id} className="product-id">
                             <img src={product.image} alt={product.name}
-                            className="h-40 w-full object-cover mb-4 rounded-lg" />
-                            <h2 className="text-lg font-semibold mb-2 text-white">
+                            className="product-img" />
+                            <h2 className="product-name">
                             {product.name}</h2>
-                            <p className="text-green-600 font-semibold">$
+                            <p className="product-price">$
                             {product.price}</p>
                             <button
                                 onClick={() => addToCart(product)}
-                                className="mt-3 bg-green-600 text-white px-4
-                                py-2 rounded-lg flex items-center gap-2
-                                hover:bg-green-700 transition-colors"
+                                className="add-to-cart-button"
                             >
                                 <FaCartPlus /> Add to Cart
                             </button>
@@ -75,10 +74,10 @@ export default function Shop() {
                 </div>
 
                 {/* Cart Section */}
-                <div className="border p-4 rounded-lg shadow-lg bg-green-500">
-                    <h2 className="text-2xl font-bold mb-4 text-white">Your Cart</h2>
+                <div className="cart-container">
+                    <h2 className="cart-heading">Your Cart</h2>
                     {cartItems.length === 0 ? (
-                        <p className='text-white'>Your cart is empty</p>
+                        <p className='cart-empty'>Your cart is empty</p>
                     ) : (
                         <>
                             {cartItems.map((item) => (
