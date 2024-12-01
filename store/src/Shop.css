@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.shop-header {
+    text-align: center;
+}
+
 .product-container {
     display: block;
    text-align: center;
@@ -12,10 +16,69 @@
     display: block;
 }
 
+.product-img {
+    height: 25em;
+    width: auto;
+    margin-top: 1em;
+}
+
+.item-container {
+    display: block;
+}
+
 .add-to-cart-btn {
     font-size: 12px;
     border-radius: .25em;
     color: white;
     background-color: black;
     margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.cart-empty {
+    color: white;
+}
+
+.cart-container {
+    display: fixed;
+    transition: .5s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: black;
+    width: 50%;
+   border-radius: 0.5em;
+}
+
+.cart-header {
+    color: white;
+}
+
+.cart-content {
+    color: white;
+}
+
+.cart-img {
+    height: 15em;
+    margin-top: 0.5em;
+}
+
+.increment-item {
+    margin-left: 0.5em;
+}
+
+.decrement-item {
+    margin-right: 0.5em;
+}
+
+.remove-btn {
+    margin-top: 0.5em;
+}
+
+.cart-total {
+   color: lightgreen;
+   margin-bottom: 1em;
 }

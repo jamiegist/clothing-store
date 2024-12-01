@@ -5,6 +5,7 @@ import PlaidBlazer from './images/plaid-blazer.jpeg';
 import PinkShirt from './images/pink-shirt.webp';
 import BlackSuit from './images/black-suit.webp';
 import GreenSneakers from './images/green-sneakers.webp';
+import './Shop.css';
 
 export default function Shop() {
  // Product data
@@ -14,7 +15,6 @@ export default function Shop() {
     {id: 3, name: 'Plaid Blazer', price: 90, image: PlaidBlazer},
     {id: 4, name: 'Black Suit', price: 100, image: BlackSuit},
     {id: 5, name: 'Green Sneakers', price: 75, image: GreenSneakers},
-   
   ];
 
   // State to manage cart items
@@ -78,7 +78,7 @@ export default function Shop() {
 
                 {/* Cart Section */}
                 <div className="cart-container">
-                    <h2 className="cart-heading">Your Cart</h2>
+                    <h2 className="cart-header">Cart</h2>
                     {cartItems.length === 0 ? (
                         <p className='cart-empty'>Your cart is empty</p>
                     ) : (
