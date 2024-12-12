@@ -20,6 +20,19 @@ export default function Shop() {
   // State to manage cart items
   const [cartItems, setCartItems] = useState([]);
 
+  // State to manage cart visibility
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  // Open cart
+  function openCart() {
+    setIsCartOpen(true);
+  }
+
+  // Close cart
+  function closeCart() {
+   setIsCartOpen(false);
+  }
+
   // Add product to cart
   const addToCart = (product) => {
     setCartItems((prevItems) => {
@@ -51,10 +64,17 @@ export default function Shop() {
     const total = cartItems.reduce((acc, item) => acc + item.price *
     item.quantity, 0);
 
+    // Calculate quantity of items in cart
+    const totalQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+
+
     return (
 <div className="shop-container">
             <div className="product-container">
                 <h1 className="shop-header">Shop</h1>
+                <button onClick={openCart} className="cart-button">
+                    Cart {totalQuantity > 0 && <span className="cart-quantity">{totalQuantity}</span>}
+                </button>
 
                 {/* Product List */}
                 <div className="products">
@@ -77,10 +97,14 @@ export default function Shop() {
                 </div>
 
                 {/* Cart Section */}
+                {isCartOpen && (
                 <div className="cart-container">
                     <h2 className="cart-header">Cart</h2>
+                    <button onClick={closeCart}>
+                        X
+                    </button>
                     {cartItems.length === 0 ? (
-                        <p className='cart-empty'>Your cart is empty</p>
+                        <p className='cart-empty'>Your cart is empty.</p>
                     ) : (
                         <>
                             {cartItems.map((item) => (
@@ -124,6 +148,7 @@ export default function Shop() {
                         </>
                     )}
                 </div>
+                )}
             </div>
         </div>
     );
