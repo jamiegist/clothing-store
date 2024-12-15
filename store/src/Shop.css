@@ -1,13 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .shop-header {
     text-align: center;
 }
 
 .shop-container {
     display: flex;
+    margin-bottom: 5em;
 }
 
 .product-container {
@@ -41,6 +38,7 @@
 
 .cart-empty {
     color: white;
+
 }
 
 .close-cart {
@@ -58,7 +56,7 @@
     text-align: center;
     background-color: black;
     width: 50%;
-    height: auto;
+    max-height: 75%;
    border-radius: 0.5em;
 }
 

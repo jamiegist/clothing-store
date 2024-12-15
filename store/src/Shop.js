@@ -17,6 +17,7 @@ export default function Shop() {
     {id: 5, name: 'Green Sneakers', price: 75, image: GreenSneakers},
   ];
 
+
   // State to manage cart items
   const [cartItems, setCartItems] = useState([]);
 
@@ -70,7 +71,33 @@ export default function Shop() {
 
     return (
 <div className="shop-container">
-    {/* Cart Section */}
+            <div className="product-container">
+
+<button onClick={openCart} className="cart-button">
+    Cart {totalQuantity > 0 && <span className="cart-quantity"> ({totalQuantity})</span>}
+</button>
+                {/* Product List */}
+                <div className="products">
+                    {products.map((product) => (
+                        <div key={product.id} className="product-id">
+                            <img src={product.image} alt={product.name}
+                            className="product-img" />
+                            <h2 className="product-name">
+                            {product.name}</h2>
+                            <p className="product-price">$
+                            {product.price}</p>
+                            <button
+                                onClick={() => addToCart(product)}
+                                className="add-to-cart-button"
+                            >
+                                <FaCartPlus /> Add to Cart
+                            </button>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Cart Section */}
     {isCartOpen && (
                 <div className="cart-container">
                     <button onClick={closeCart} className="close-cart">
@@ -124,33 +151,6 @@ export default function Shop() {
                 </div>
                  )}
 
-            <div className="product-container">
-                <h1 className="shop-header">Shop</h1>
-                <button onClick={openCart} className="cart-button">
-                    Cart {totalQuantity > 0 && <span className="cart-quantity">{totalQuantity}</span>}
-                </button>
-
-                {/* Product List */}
-                <div className="products">
-                    {products.map((product) => (
-                        <div key={product.id} className="product-id">
-                            <img src={product.image} alt={product.name}
-                            className="product-img" />
-                            <h2 className="product-name">
-                            {product.name}</h2>
-                            <p className="product-price">$
-                            {product.price}</p>
-                            <button
-                                onClick={() => addToCart(product)}
-                                className="add-to-cart-button"
-                            >
-                                <FaCartPlus /> Add to Cart
-                            </button>
-                        </div>
-                    ))}
-                </div>
-               
-            </div>
         </div>
     );
 }
