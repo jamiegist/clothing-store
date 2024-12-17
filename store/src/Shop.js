@@ -54,7 +54,6 @@ export default function Shop() {
     setCartItems([]);
   }
 
-
 // Checkout button
   const checkout = () => {
         setCartItems([]);
@@ -166,7 +165,6 @@ export default function Shop() {
                         <button onClick={checkout} className="checkout-btn">
                             Check Out
                         </button>
-                    
                 </div>
                  )}
 

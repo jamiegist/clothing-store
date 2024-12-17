@@ -37,7 +37,15 @@
 
 .cart-empty {
     color: white;
+}
 
+.cart-button {
+    display: fixed;
+    margin-top: 0.25em;
+    border-radius: 1em;
+    background-color: black;
+    color: white;
+    padding: 0.75em;
 }
 
 .close-cart {
