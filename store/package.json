@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
-    "react-router-dom": "^6.28.0"
+    "react-router-dom": "^6.28.0",
+    "react-scripts": "2.0.5"
   }
 }
