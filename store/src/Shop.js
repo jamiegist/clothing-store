@@ -17,7 +17,6 @@ export default function Shop() {
     {id: 5, name: 'Green Sneakers', price: 75, image: GreenSneakers},
   ];
 
-
   // State to manage cart items
   const [cartItems, setCartItems] = useState([]);
 
@@ -48,6 +47,18 @@ export default function Shop() {
               }];
             }
         });
+  };
+
+// Clear cart
+  const clearCart = () => {
+    setCartItems([]);
+  }
+
+
+// Checkout button
+  const checkout = () => {
+        setCartItems([]);
+        alert("Thank you for your purchase!");
   };
 
   // Remove product from the cart
@@ -148,6 +159,14 @@ export default function Shop() {
                             </div>
                         </>
                     )}
+                        <button onClick={clearCart} className="clear-cart-btn">
+                            Clear Cart
+                        </button>
+
+                        <button onClick={checkout} className="checkout-btn">
+                            Check Out
+                        </button>
+                    
                 </div>
                  )}
 

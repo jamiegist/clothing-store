@@ -4,7 +4,6 @@
 
 .shop-container {
     display: flex;
-    margin-bottom: 5em;
 }
 
 .product-container {
@@ -50,13 +49,11 @@
 .cart-container {
     display: fixed;
     position: sticky;
-    margin-top: 5em;
-    margin-right: 5em;
     left: 25%;
     text-align: center;
     background-color: black;
     width: 50%;
-    max-height: 75%;
+    max-height: 100%;
    border-radius: 0.5em;
 }
 
@@ -88,4 +85,19 @@
 .cart-total {
    color: lightgreen;
    margin-bottom: 1em;
+}
+
+.clear-cart-btn {
+    margin-right: 0.25em;
+    border-radius: 1em;
+    background-color: lightgrey;
+    color: black;
+    padding: 0.5em;
+}
+
+.checkout-btn {
+    background-color: lightgreen;
+    color: black;
+    border-radius: 1em;
+    padding: 0.5em;
 }
