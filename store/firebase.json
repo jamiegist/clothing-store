@@ -1,0 +1,6 @@
+{
+    "hosting": {
+    "site": "vetements-store",
+    "build": "build"
+    }
+}
