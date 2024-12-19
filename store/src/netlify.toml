@@ -1,4 +1,4 @@
-‘ [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200 ’
+[[redirects]]
+from = "/index.html"
+to = "/src"
+status = 301
